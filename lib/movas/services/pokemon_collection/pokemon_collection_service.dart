@@ -20,9 +20,9 @@ class PokemonCollectionService extends BasePokemonCollectionService {
   PokemonCollectionService(this.httpService, this.getPokemonColors$, this.getPokemons$, this.getPokemonType$, this.getPokemonDetails$);
 
   @override
-  Future<void> getAllPokemons({int? page}) async {
+  Future<void> getAllPokemons({int? offset}) async {
     var result = await httpService.get(
-        request: GetPokemonsHttpRequest(page ?? 0),
+        request: GetPokemonsHttpRequest(offset ?? 0),
         converter: (res) => GetPokemonsHttpResponse.fromMap(res)
     );
 

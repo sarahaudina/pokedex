@@ -28,13 +28,13 @@ class PokedexDetailsPage extends StatelessWidget {
       ),
         ),
       ),
-      body: Consumer<PokemonDetailsO>(builder: (BuildContext context, value, Widget? child) {
+      body: Consumer<PokemonDetailsO?>(builder: (BuildContext context, value, Widget? child) {
         return
-          value?.name!= pokemonO.name
+          value==null || value?.name!= pokemonO.name
               ? Center(
                 child: CircularProgressIndicator(),
               ) : Center(
-        child: PokemonDescriptionModal(details: value, pokemonO: pokemonO,),);
+        child: PokemonDescriptionModal(details: value!, pokemonO: pokemonO,),);
       },),
     );
   }
@@ -96,7 +96,7 @@ class _PokemonDescriptionModalState extends State<PokemonDescriptionModal> with 
                       padding: EdgeInsets.only(top: 16),
                       child: Row(
                         children: [
-                          ...widget.pokemonO.types.map((el) => typeBadge(el, getColor(widget.pokemonO.color)))
+                          ...widget.pokemonO.types.map((el) => Padding(padding: EdgeInsets.only(right: 8), child: typeBadge(el, getColor(widget.pokemonO.color))))
                         ],
                       ),
                     )

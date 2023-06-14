@@ -12,25 +12,35 @@ class AllPokemonStore extends Store3<AllPokemonO, PokemonColorsO, PokemonTypesO>
   final PublishSubject<GetPokemonColorHttpResponse> getPokemonColors$;
   final PublishSubject<GetPokemonTypeHttpResponse> getPokemonType$;
 
+  AllPokemonO get currentPokemons => o$[AllPokemonO]!.value;
+
   PokemonColorsO? get currentColorMap => o$[PokemonColorsO]?.valueOrNull;
 
   PokemonTypesO? get currentTypesMap => o$[PokemonTypesO]?.valueOrNull;
 
   AllPokemonStore(this.getPokemons$, this.getPokemonColors$, this.getPokemonType$) {
+    add(AllPokemonO([]));
+
     listen(getPokemons$, (p1)  {
+      if (currentPokemons.allPokemons.isNotEmpty && p1.pokemons.last.name==currentPokemons?.allPokemons.last.name) {
+        return;
+      }
+
       List<PokemonO> newPokemons = [];
       for (var i in p1.pokemons) {
         var color = currentColorMap?.mapOfColors[i.name];
         var types = currentTypesMap?.mapOfTypes[i.name];
 
-        print('${i.id} poke ${i.name} is $color $types');
+        // print('${i.id} poke ${i.name} is $color $types');
 
         newPokemons.add(PokemonO(i.id, i.url, i.name, color ?? "", types ?? []));
       }
 
-      print('poke count is ${newPokemons.length}');
+      add(currentPokemons.copyWith(
+        allPokemons: currentPokemons.allPokemons..addAll(newPokemons)
+      ));
 
-      add(AllPokemonO(newPokemons));
+      // print('poke count is ${currentPokemons.allPokemons.length}');
     });
 
     listen(getPokemonColors$, (p1)  {

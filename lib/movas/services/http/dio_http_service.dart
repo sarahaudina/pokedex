@@ -19,7 +19,7 @@ class MobileDioHttpService extends BaseHttpService {
     dio.interceptors.add(
       InterceptorsWrapper(
         onRequest: (RequestOptions options, RequestInterceptorHandler handler) async {
-          print('to: ${options.uri}');
+          // print('to: ${options.uri}');
 
           return handler.next(options);
         },

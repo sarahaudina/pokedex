@@ -17,8 +17,8 @@ class PokemonCollectionAction {
     return;
   }
 
-  Future<void> getAllPokemon({int? page}) async {
-    return await pokemonCollectionService.getAllPokemons(page: page);
+  Future<void> getAllPokemon({int? offset}) async {
+    return await pokemonCollectionService.getAllPokemons(offset: offset);
   }
 
   Future<void> getPokemonDetail(String name) async {

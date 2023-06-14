@@ -5,4 +5,12 @@ class AllPokemonO {
   final List<PokemonO> allPokemons;
 
   AllPokemonO(this.allPokemons);
+
+  AllPokemonO copyWith({
+    List<PokemonO>? allPokemons,
+  }) {
+    return AllPokemonO(
+       allPokemons ?? this.allPokemons,
+    );
+  }
 }
