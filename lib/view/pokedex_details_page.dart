@@ -188,9 +188,9 @@ class AboutWidget extends StatelessWidget {
               children: [
                 Text(capitalize(details.species)),
                 Container(height: 8,),
-                Text(details.height.toString()),
+                Text('${(details.height*.1).toStringAsFixed(2)} cm'),
                 Container(height: 8,),
-                Text(details.weight.toString()),
+                Text('${(details.weight*.1).toStringAsFixed(1)} kg'),
                 Container(height: 8,),
                 Text(details.abilities.join(", "))
               ]
