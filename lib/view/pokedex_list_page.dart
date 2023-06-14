@@ -101,7 +101,7 @@ class PokeDexPageState extends State<PokeDexPage> {
                       padding: EdgeInsets.all(8),
                       child: Column(
                         children: [
-                          Image.network('https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${value.allPokemons[index].id}.png'),
+                          Image.network('https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index+1}.png'),
                           Text(capitalize(value.allPokemons[index].name), style: TextStyle(fontWeight: FontWeight.bold, color: getContrastColor(getColor(value.allPokemons[index].color)), fontSize: 18),),
                           ...value.allPokemons[index].types!.map((type)
                           => Padding(
