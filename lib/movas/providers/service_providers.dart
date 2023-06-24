@@ -9,7 +9,7 @@ import 'package:provider/single_child_widget.dart';
 
 List<SingleChildWidget> serviceProviders = [
   Provider<BaseHttpService>(
-    create: (context) => MobileDioHttpService(
+    create: (context) => DioHttpService(
         Dio(),
       baseUrl: "https://pokeapi.co/api/v2"
     ),

@@ -5,12 +5,12 @@ import 'package:pokedex/movas/services/http/base_http_service.dart';
 
 String contentTypeApplicationJson = "application/json; charset=utf-8";
 
-class DioHttpService extends BaseHttpService {
+class MobileDioHttpService extends BaseHttpService {
   String token = "";
 
   final Dio dio;
 
-  DioHttpService(this.dio,
+  MobileDioHttpService(this.dio,
       {required String baseUrl}) {
     dio.options.baseUrl = baseUrl;
     dio.options.connectTimeout = 200000;
