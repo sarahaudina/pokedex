@@ -1,4 +1,5 @@
-import 'package:pokedex/movas/models/http_responses/get_pokemon_details_http_response.dart';
+
+import 'package:pokedex/riverpod/models/http_responses/get_pokemon_details_http_response.dart';
 
 class PokemonDetailsO {
   final int id;

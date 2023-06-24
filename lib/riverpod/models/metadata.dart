@@ -1,5 +1,5 @@
-import 'package:pokedex/movas/observables/pokemon_colors_o.dart';
-import 'package:pokedex/movas/observables/pokemon_types_o.dart';
+import 'package:pokedex/riverpod/observables/pokemon_colors_o.dart';
+import 'package:pokedex/riverpod/observables/pokemon_types_o.dart';
 
 class MetadataO {
   final PokemonColorsO colorsO;

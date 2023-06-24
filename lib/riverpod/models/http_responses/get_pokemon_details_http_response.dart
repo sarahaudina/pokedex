@@ -1,4 +1,4 @@
-import 'package:pokedex/movas/observables/pokemon_detailed_o.dart';
+import 'package:pokedex/riverpod/observables/pokemon_detailed_o.dart';
 
 class GetPokemonDetailsHttpResponse {
   final int id;

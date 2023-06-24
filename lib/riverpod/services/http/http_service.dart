@@ -1,6 +1,6 @@
-import 'package:pokedex/movas/models/http_requests/base_http_request.dart';
+import 'package:pokedex/riverpod/models/http_requests/base_http_request.dart';
 
-abstract class BaseHttpService {
+abstract class HttpService {
   Future<T> post<T>({
     required BaseHttpRequest request,
     T Function(Map<String, dynamic> data)? converter,

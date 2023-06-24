@@ -1,6 +1,7 @@
 import 'dart:io';
 
-import 'package:pokedex/movas/models/http_requests/base_http_request.dart';
+import 'package:pokedex/riverpod/constants.dart';
+import 'package:pokedex/riverpod/models/http_requests/base_http_request.dart';
 
 class GetPokemonsHttpRequest extends BaseHttpRequest {
   final int? page;

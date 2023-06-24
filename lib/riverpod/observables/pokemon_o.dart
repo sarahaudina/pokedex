@@ -1,6 +1,6 @@
 import 'dart:math';
 
-import 'package:pokedex/movas/models/pokemon_model.dart';
+import 'package:pokedex/riverpod/models/pokemon_model.dart';
 
 class PokemonO {
   final int id;

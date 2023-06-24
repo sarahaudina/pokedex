@@ -1,12 +1,14 @@
-// import 'package:flutter_riverpod/flutter_riverpod.dart';
-//
-// import '../repositories/movie/http_movie_repository.dart';
-// import 'locale_provider.dart';
-// import 'services_providers.dart';
-//
-// final movieRepositoryProvider = Provider<HttpMovieRepository>(
-//       (ref) => HttpMovieRepository(
-//     api: ref.read(dioServiceProvider),
-//     locale: ref.read(localeProvider),
-//   ),
-// );
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:pokedex/riverpod/providers/services_provider.dart';
+import 'package:pokedex/riverpod/repositories/metadata/http_metadata_repository.dart';
+import 'package:pokedex/riverpod/repositories/metadata/metadata_repository.dart';
+import 'package:pokedex/riverpod/repositories/pokemon/http_pokemon_repository.dart';
+import 'package:pokedex/riverpod/repositories/pokemon/pokemon_repository.dart';
+
+final metadataRepositoryProvider = Provider<MetadataRepository>(
+      (ref) => HttpMetadataRepository(ref.read(dioServiceProvider))
+);
+
+final pokemonRepositoryProvider = Provider<PokemonRepository>(
+        (ref) => HttpPokemonRepository(ref.read(dioServiceProvider))
+);

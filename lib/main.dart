@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:movas/config/config.dart';
-import 'package:pokedex/movas/providers/providers.dart';
 import 'package:pokedex/view/pokedex_list_page.dart';
 import 'package:provider/provider.dart';
 

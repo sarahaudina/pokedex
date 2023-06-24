@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:pokedex/movas/observables/pokemon_detailed_o.dart';
-import 'package:pokedex/movas/observables/pokemon_o.dart';
-import 'package:pokedex/movas/util.dart';
+import 'package:pokedex/riverpod/observables/pokemon_detailed_o.dart';
+import 'package:pokedex/riverpod/observables/pokemon_o.dart';
+import 'package:pokedex/riverpod/util.dart';
 import 'package:pokedex/view/pokedex_list_page.dart';
 import 'package:provider/provider.dart';
 

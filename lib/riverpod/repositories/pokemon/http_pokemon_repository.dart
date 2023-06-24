@@ -1,22 +1,17 @@
 import 'package:movas/movas.dart';
-import 'package:pokedex/movas/models/http_requests/get_color_http_request.dart';
-import 'package:pokedex/movas/models/http_requests/get_pokemon_details_http_request.dart';
-import 'package:pokedex/movas/models/http_requests/get_pokemons_http_request.dart';
-import 'package:pokedex/movas/models/http_requests/get_type_http_request.dart';
-import 'package:pokedex/movas/models/http_responses/get_pokemon_color_http_response.dart';
-import 'package:pokedex/movas/models/http_responses/get_pokemon_details_http_response.dart';
-import 'package:pokedex/movas/models/http_responses/get_pokemon_type_http_response.dart';
-import 'package:pokedex/movas/models/http_responses/get_pokemons_http_response.dart';
-import 'package:pokedex/movas/observables/pokemon_detailed_o.dart';
-import 'package:pokedex/movas/observables/pokemon_o.dart';
-import 'package:pokedex/movas/services/http/base_http_service.dart';
-import 'package:pokedex/movas/services/pokemon_collection/base_pokemon_collection_service.dart';
+import 'package:pokedex/riverpod/observables/pokemon_detailed_o.dart';
+import 'package:pokedex/riverpod/observables/pokemon_o.dart';
+import 'package:pokedex/riverpod/models/http_requests/get_pokemon_details_http_request.dart';
+import 'package:pokedex/riverpod/models/http_requests/get_pokemons_http_request.dart';
+import 'package:pokedex/riverpod/models/http_responses/get_pokemon_details_http_response.dart';
+import 'package:pokedex/riverpod/models/http_responses/get_pokemons_http_response.dart';
 import 'package:pokedex/riverpod/repositories/pokemon/pokemon_repository.dart';
+import 'package:pokedex/riverpod/services/http/http_service.dart';
 
 class HttpPokemonRepository extends PokemonRepository {
-  final BaseHttpService httpService;
+  final HttpService httpService;
 
-  HttpPokemonRepository(this.httpService);
+  HttpPokemonRepository(this.httpService) : super();
 
   @override
   Future<List<PokemonO>> getPokemons({int? offset}) async {

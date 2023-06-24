@@ -1,16 +1,14 @@
 import 'dart:convert';
 import 'package:dio/dio.dart';
-import 'package:pokedex/movas/models/http_requests/base_http_request.dart';
-import 'package:pokedex/movas/services/http/base_http_service.dart';
+import 'package:pokedex/riverpod/models/http_requests/base_http_request.dart';
+import 'package:pokedex/riverpod/services/http/http_service.dart';
 
-String contentTypeApplicationJson = "application/json; charset=utf-8";
-
-class MobileDioHttpService extends BaseHttpService {
+class DioHttpService extends HttpService {
   String token = "";
 
   final Dio dio;
 
-  MobileDioHttpService(this.dio,
+  DioHttpService(this.dio,
       {required String baseUrl}) {
     dio.options.baseUrl = baseUrl;
     dio.options.connectTimeout = 200000;
